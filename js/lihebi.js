@@ -24,4 +24,7 @@ $(document).ready(function(){
     }).mouseleave(function(){
 	$('#hunqingimg').slideUp();
     });
+    $('#zijia').click(function(){
+	$.smoothScroll({scrollTarget: '#zijiapage', speed: 400});
+    });
 });
