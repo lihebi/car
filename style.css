@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+}
+#canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+#header {
+    padding: 10px;
+}
+#logo {
+    position: absolute;
+    background: url(img/xiaomilogo.png);
+    background-position: 0 0;
+    width: 145px;
+    height: 62px;
+    top: 30px;
+}
+#menu {
+    float: right;
+}
+#menu ul {
+    list-style-type: none;
+    padding: 30px;
+}
+#menu li {
+    display: inline;
+    padding: 0px 15px;
+}
+#menu li a {
+    color: black;
+}
+#menu li a.current {
+    border-bottom: 2px solid black;
+}
+
+#nav {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+}
+#nav ul {
+    list-style: none;
+}
+#nav ul li {
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #666666;
+    width: 300px;
+}
+#nav ul li#zijia { background-color: #006699;}
+#nav ul li#shangwu { background-color: #666666;}
+#nav ul li#hunqing { background-color: #ff6666;}
+#nav ul li h3 {
+    margin-bottom: 15px;
+}
+#nav ul li p {
+}
+#slidearea {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 20%;
+    right: 5%;
+    overflow: hidden; /* 不会两个图片同时出现 */
+}
+#slidearea div {
+    height: 100%;
+    background-size: 100% 100%; /* important */
+    display: none;
+}
+#zijiaimg {
+    background: url(img/zijia.jpg);
+}
+#shangwuimg {
+    background: url(img/shangwu.jpg);
+}
+#hunqingimg {
+    background: url(img/wedding.jpg);
+}
+
