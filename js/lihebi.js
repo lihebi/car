@@ -11,26 +11,26 @@ $(document).ready(function(){
     };
     $('#zijia').mouseenter(function(){
 	$stopall();
-	$('#zijiaimg').slideDown();
+	$('#zijiaimg').fadeIn();
 	$('#zijia').addClass('current');
     }).mouseleave(function(){
-	$('#zijiaimg').slideUp();
+	$('#zijiaimg').fadeOut();
 	$('#zijia').removeClass('current');
     });
     $('#shangwu').mouseenter(function(){
 	$stopall();
-	$('#shangwuimg').slideDown();
+	$('#shangwuimg').fadeIn();
 	$('#shangwu').addClass('current');
     }).mouseleave(function(){
-	$('#shangwuimg').slideUp();
+	$('#shangwuimg').fadeOut();
 	$('#shangwu').removeClass('current');
     });
     $('#hunqing').mouseenter(function(){
 	$stopall();
-	$('#hunqingimg').slideDown();
+	$('#hunqingimg').fadeIn();
 	$('#hunqing').addClass('current');
     }).mouseleave(function(){
-	$('#hunqingimg').slideUp();
+	$('#hunqingimg').fadeOut();
 	$('#hunqing').removeClass('current');
     });
 
