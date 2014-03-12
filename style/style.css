@@ -1,0 +1,69 @@
+body {
+    position: relative;
+    padding-top: 50px;
+}
+.btn-outline {
+    color: #563d7c;
+    background-color: #fff;
+    border-color: #e5e5e5;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+    color: #fff;
+    background-color: #563d7c;
+    border-color: #563d7c;
+}
+/* inverted outline button (white on dark) */
+.btn-outline-inverse {
+    color: #fff;
+    background-color: transparent;
+    border-color: #cdbfe3;
+}
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+    color: #563d7c;
+    text-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+}
+.bs-docs-home,
+.bs-header {
+    color: #cdbfe3;
+    background-color: #563d7c;
+}
+.bs-masthead {
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+.bs-masthead h1 {
+    font-size: 50px;
+    line-height: 1;
+    color: #fff;
+}
+.bs-masthead .btn-outline-inverse {
+    margin: 10px;
+}
+@media (min-width: 768px) {
+    .bs-masthead {
+	text-align: left;
+	padding-top: 140px;
+	padding-bottom: 140px;
+    }
+    .bs-masthead h1 {
+	font-size: 100px;
+    }
+    .bs-masthead .lead {
+	margin-right: 25%;
+	font-size: 30px;
+    }
+    .bs-masthead .btn-outline-inverse {
+	width: auto;
+	margin: 20px 5px 20px 0;
+	padding: 18px 24px;
+	font-size: 21px;
+    }
+}
