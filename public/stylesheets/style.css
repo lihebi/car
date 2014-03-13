@@ -1,0 +1,25 @@
+body {
+}
+.jumbotron ul {
+    margin: 40px;
+}
+@media (min-width: 768px) {
+    .bs-masthead {
+	text-align: left;
+	padding-top: 140px;
+	padding-bottom: 140px;
+    }
+    .bs-masthead h1 {
+	font-size: 100px;
+    }
+    .bs-masthead .lead {
+	margin-right: 25%;
+	font-size: 30px;
+    }
+    .bs-masthead .btn-outline-inverse {
+	width: auto;
+	margin: 20px 5px 20px 0;
+	padding: 18px 24px;
+	font-size: 21px;
+    }
+}
