@@ -1,14 +1,9 @@
 $(document).ready(function(){
-    $('#regbtn').click(function(){
-	$('#logintabbtn').removeClass('active');
-	$('#regtabbtn').addClass('active');
-	$('#logintab').removeClass('active');
-	$('#regtab').addClass('active');
-    });
-    $('#loginbtn').click(function(){
-	$('#regtabbtn').removeClass('active');
-	$('#logintabbtn').addClass('active');
-	$('#regtab').removeClass('active');
-	$('#logintab').addClass('active');
-    });
+    switch (window.location.pathname) {
+	case '/login': $('#navbarlogin').addClass('active');break;
+	case '/reg': $('#navbarreg').addClass('active');break;
+	case '/wedding': $('#navbarwedding').addClass('active');break;
+	case '/business': $('#navbarbusiness').addClass('active');break;
+	case '/travel': $('#navbartravel').addClass('active');break;
+    }
 });
