@@ -1,7 +1,31 @@
 body {
+    background-color: #eee;
 }
 .jumbotron ul {
     margin: 40px;
+}
+#limits .btn {
+    margin: 0 4px;
+}
+#limits .btn.active {
+    background-color: #3276b1;
+    color: #fff;
+}
+#limits .row {
+    margin: 4px 0;
+}
+#limits label {
+    display: inline-block;
+    vertical-align: middle;
+}
+#control {
+    margin: 20px 0;
+}
+#items > div {
+    margin: 20px 0;
+}
+.modal-dialog-center {
+    margin-top: 25%;
 }
 @media (min-width: 768px) {
     .bs-masthead {

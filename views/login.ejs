@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-center'>
+	<div class='modal-content'>
+	    <div class='modal-header'>
+		<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+		<ul class='nav nav-tabs'>
+		    <li id='logintabbtn' class='active'><a href='#logintab' data-toggle='tab'>登录</a></li>
+		    <li id='regtabbtn'><a href='#regtab' data-toggle='tab'>注册</a></li>
+		</ul>
+	    </div>
+	    <div class='modal-body'>
+		<div class='tab-content'>
+		    <div class='tab-pane active' id='logintab'>
+			<form class='form-horizontal' role='form'>
+			    <div class='form-group'>
+				<label for='inputEmail' class='col-sm-3 control-label'>电子邮箱：</label>
+				<div class='col-sm-9'>
+				    <input type='email' class='form-control' id='inputEmail' placeholder='Email'>
+				</div>
+			    </div>
+			    <div class='form-group'>
+				<label for='inputPassword' class='col-sm-3 control-label'>密码：</label>
+				<div class='col-sm-9'>
+				    <input type='password' class='form-control' id='inputPassword' placeholder='Password'>
+				</div>
+			    </div>
+			    <div class='form-group'>
+				<div class='col-sm-offset-3 col-sm-10'>
+				    <div class='checkbox'>
+					<label>
+					    <input type='checkbox'>下次自动登录
+					</label>
+				    </div>
+				</div>
+			    </div>
+			</form>
+		    </div>
+		    <div class='tab-pane' id='regtab'>
+			<form class='form-horizontal' role='form'>
+			    <div class='form-group'>
+				<label for='regEmail' class='col-sm-3 control-label'>电子邮箱：</label>
+				<div class='col-sm-9'>
+				    <input type='email' class='form-control' id='regEmail' placeholder='username@126.com'>
+				</div>
+			    </div>
+			    <div class='form-group'>
+				<label for='regPassword' class='col-sm-3 control-label'>密码：</label>
+				<div class='col-sm-9'>
+				    <input type='password' class='form-control' id='regPassword' placeholder='Password'>
+				</div>
+			    </div>
+			    <div class='form-group'>
+				<label for='confirmPassword' class='col-sm-3 control-label'>再次输入密码：</label>
+				<div class='col-sm-9'>
+				    <input type='password' class='form-control' id='confirmPassword' placeholder='Password'>
+				</div>
+			    </div>
+			</form>
+		    </div>
+		</div>
+	    </div>
+	    <div class='modal-footer'>
+		<button type='button' class='btn btn-default' data-dismiss='modal'>取消</button>
+		<button type='button' class='btn btn-primary'>确定</button>
+	    </div>
+	</div>
+    </div>
+</div>
