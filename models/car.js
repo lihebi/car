@@ -6,7 +6,7 @@ function Car(car) {
     this.price = car.price;
     this.preprice = car.preprice;
     this.commitnum = car.commitnum;
-    this.carnum = car.carnum;
+    this.usernum = car.usernum;
     this.location = car.location;
     this.src = car.src;
     this.renter = car.renter;
@@ -48,7 +48,54 @@ Car.prototype.save = function(callback) {
     });
 };
 
-Car.get = function(id, callback) {
+Car.deleteById = function(id, callback) {
+    mongodb.open(function(err, db) {
+	if (err) {
+	    return callback(err);
+	}
+	console.log('opened');
+	db.collection('cars', function(err, collection){
+	    if (err) {
+		mongodb.close();
+		console.log('close');
+		return callback(err);
+	    }
+	    collection.remove({id: id}, function(err, car) {
+		mongodb.close();
+		console.log('close2');
+		if (err) {
+		    return callback(err);
+		}
+		callback(null, car[0]);
+	    });
+	});
+    });
+};
+
+Car.update = function(id, newcar, callback) {
+    mongodb.open(function(err, db) {
+	if (err) {
+	    return callback(err);
+	}
+	db.collection('cars', function(err, collection)  {
+	    if (err) {
+		mongodb.close();
+		return callback(err);
+	    }
+	    collection.update({id: id}, newcar, {
+		safe: true
+	    }, function (err, car) {
+		mongodb.close();
+		if (err) {
+		    return callback(err);
+		}
+		callback(null, car);
+	    });
+	});
+    });
+};
+
+Car.getById = function(id, callback) {
     mongodb.open(function(err, db) {
 	if (err) {
 	    return callback(err);

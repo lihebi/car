@@ -7,10 +7,11 @@ var account = require('./account.js');
 var hebi = require('./hebi.js');
 var Car = require('../models/car.js');
 
-function renderpage(req, res, ejs, title) {
+function renderpage(req, res, ejs, title, data) {
     res.render(ejs, {
 	    title: title,
 	    user: req.session.user,
+	    data: data,
 	    success: req.flash('success').toString(),
 	    error: req.flash('error').toString()
     });
@@ -91,8 +92,23 @@ module.exports = function(app) {
     app.get('/hebi/carmanage', function(req, res) {
 	renderpage(req, res, 'hebi/carmanage', 'Car Data Manage');
     });
-    app.get('/hebi/modify', checkHebi);
-    app.get('/hebi/modify', function(req, res) {
+    app.get('/hebi/carmodify', checkHebi);
+    app.get('/hebi/carmodify', function(req, res) {
+	Car.getById(req.query.id, function(err, car) {
+	    renderpage(req, res, 'hebi/carmodify', 'Modify Data', car);
+	});
+    });
+    app.post('/hebi/carmodify', checkHebi);
+    app.post('/hebi/carmodify', function(req, res) {
+	hebi.carmodify(req, res);
+	//hebi.carsubmit(req, res);
+    });
+    app.get('/hebi/cardelete', checkHebi);
+    app.get('/hebi/cardelete', function(req, res) {
+	Car.deleteById(req.query.id, function(err, car){
+	    req.flash('success', 'deleted');
+	    res.redirect('/hebi');
+	});
     });
     app.get('/getcar', function(req, res) {
 	Car.getall(function(err, cars){

@@ -20,7 +20,7 @@ function getcarsformanage() {
 	    data.forEach(function(car, index) {
 		var html = formhtml(car, index);
 		$('#items').append(html);
-		html = "<a href='/hebi/modify?id="+car.id+"' class='btn btn-primary'>Modify</a>";
+		html = "<a href='/hebi/carmodify?id="+car.id+"' class='btn btn-warning'>Modify</a>" + "<a href='/hebi/cardelete?id="+car.id+"' class='btn btn-danger'>Delete</a>"
 		$('#items').append(html);
 	    });
 	}
