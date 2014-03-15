@@ -27,6 +27,13 @@ function checkNotLogin(req, res, next) {
     }
     next();
 }
+function checkHebi(req, res, next) {
+    if (!req.session.user || req.session.user.email != 'lihebi@mail.ustc.edu.cn') {
+	req.flash('error', 'you are not handsome');
+	res.redirect('back');
+    }
+    next();
+}
 
 module.exports = function(app) {
     app.get('/', function(req, res) {
@@ -66,5 +73,31 @@ module.exports = function(app) {
     app.get('/me', checkLogin);
     app.get('/me', function(req, res) {
 	renderpage(req, res, 'me', '我的租车风');
+    });
+    app.get('/hebi', checkHebi);
+    app.get('/hebi', function(req, res) {
+	renderpage(req, res, 'hebi', 'Control Page');
+    });
+    app.get('/test', function(req, res) {
+	res.send({
+	    0:{
+		name: '奔驰',
+		src: 'images/benchi.jpg',
+		price: '118',
+		location: '合肥市蜀山区',
+		usernum: 114,
+		commitnum: 62,
+		renter: '合肥天运'
+	    },
+	    1: {
+		name: '宝马',
+		src: 'images/baoma.jpg',
+		price: '149',
+		location: '合肥市蜀山区',
+		usernum: 318,
+		commitnum: 142,
+		renter: '合肥天运'
+	    }
+	});
     });
 }

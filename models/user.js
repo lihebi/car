@@ -3,7 +3,7 @@ var mongodb = require('./db');
 function User(user) {
     this.email = user.email;
     this.password = user.password;
-};
+}
 
 module.exports = User;
 
