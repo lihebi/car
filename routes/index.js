@@ -4,6 +4,8 @@
  */
 
 var account = require('./account.js');
+var hebi = require('./hebi.js');
+var Car = require('../models/car.js');
 
 function renderpage(req, res, ejs, title) {
     res.render(ejs, {
@@ -29,7 +31,7 @@ function checkNotLogin(req, res, next) {
 }
 function checkHebi(req, res, next) {
     if (!req.session.user || req.session.user.email != 'lihebi@mail.ustc.edu.cn') {
-	req.flash('error', 'you are not handsome');
+	req.flash('error', 'you are not handsome enough');
 	res.redirect('back');
     }
     next();
@@ -78,26 +80,23 @@ module.exports = function(app) {
     app.get('/hebi', function(req, res) {
 	renderpage(req, res, 'hebi', 'Control Page');
     });
-    app.get('/test', function(req, res) {
-	res.send({
-	    0:{
-		name: '奔驰',
-		src: 'images/benchi.jpg',
-		price: '118',
-		location: '合肥市蜀山区',
-		usernum: 114,
-		commitnum: 62,
-		renter: '合肥天运'
-	    },
-	    1: {
-		name: '宝马',
-		src: 'images/baoma.jpg',
-		price: '149',
-		location: '合肥市蜀山区',
-		usernum: 318,
-		commitnum: 142,
-		renter: '合肥天运'
-	    }
+    app.get('/hebi/carsubmit', checkHebi);
+    app.get('/hebi/carsubmit', function(req, res) {
+	renderpage(req, res, 'hebi/carsubmit', 'Car Information Submit');
+    });
+    app.post('/hebi/carsubmit', function(req, res) {
+	hebi.carsubmit(req, res);
+    });
+    app.get('/hebi/carmanage', checkHebi);
+    app.get('/hebi/carmanage', function(req, res) {
+	renderpage(req, res, 'hebi/carmanage', 'Car Data Manage');
+    });
+    app.get('/hebi/modify', checkHebi);
+    app.get('/hebi/modify', function(req, res) {
+    });
+    app.get('/getcar', function(req, res) {
+	Car.getall(function(err, cars){
+	    res.send(cars);
 	});
     });
 }

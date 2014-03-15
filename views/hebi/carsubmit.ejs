@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<%- include ../header %>
+
+You are super user!
+
+<h2>Car Infomation Submit</h2>
+<div class='container'>
+<form method='post' class='form-horizontal' role='form'>
+    <div class='form-group'>
+	<label for=''>名称 name</label>
+	<input name='name' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label for=''>ID id</label>
+	<input name='id' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>价格 price</label>
+	<input name='price' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label> 原价 preprice</label>
+	<input name='preprice' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>评论数 commitnum</label>
+	<input name='commitnum' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>30天使用次数 usernum</label>
+	<input name='usernum' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>所在地 location</label>
+	<input name='location' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>图片地址 src</label>
+	<input name='src' type='text' class='form-control'/>
+    </div>
+    <div class='form-group'>
+	<label>出租者 renter</label>
+	<input name='renter' type='text' class='form-control'/>
+    </div>
+    <label><button type='submit' class='btn'>Submit</button></label>
+</form>
+</div>
+
+<%- include ../footer %>
