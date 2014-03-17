@@ -1,31 +1,14 @@
 var mongodb = require('./db');
+var common = require('./common');
 
 function Car(car) {
-    this.name = car.name;
-    this.id = car.id;
-    this.price = car.price;
-    this.preprice = car.preprice;
-    this.commitnum = car.commitnum;
-    this.usernum = car.usernum;
-    this.location = car.location;
-    this.src = car.src;
-    this.renter = car.renter;
+    common.cloneTo(car, this);
 }
 
 module.exports = Car;
 
 Car.prototype.save = function(callback) {
-    var car = {
-	name: this.name,
-	id: this.id,
-	price: this.price,
-	preprice: this.preprice,
-	commitnum: this.commitnum,
-	usernum: this.usernum,
-	location: this.location,
-	src: this.src,
-	renter: this.renter
-    };
+    var car = common.clone(this);
     mongodb.open(function(err, db) {
 	if (err) {
 	    return callback(err);

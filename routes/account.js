@@ -2,23 +2,6 @@ var crypto = require('crypto');
 var User = require('../models/user.js');
 exports.login = login;
 exports.reg = reg;
-function login (req, res) {
-    var md5 = crypto.createHash('md5');
-    var password = md5.update(req.body.password).digest('hex');
-    User.get(req.body.email, function(err, user) {
-	if (!user) {
-	    req.flash('error', 'user not exists');
-	    return res.redirect('/login');
-	}
-	if (user.password != password) {
-	    req.flash('error', 'wrong password');
-	    return res.redirect('/login');
-	}
-	req.session.user = user;
-	req.flash('success', 'login success');
-	res.redirect('/');
-    });
-};
 function reg(req, res) {
     var email = req.body.email;
     var password = req.body.password;
@@ -47,5 +30,22 @@ function reg(req, res) {
 	    req.flash('success', 'register success');
 	    res.redirect('/');
 	});
+    });
+};
+function login (req, res) {
+    var md5 = crypto.createHash('md5');
+    var password = md5.update(req.body.password).digest('hex');
+    User.get(req.body.email, function(err, user) {
+	if (!user) {
+	    req.flash('error', 'user not exists');
+	    return res.redirect('/login');
+	}
+	if (user.password != password) {
+	    req.flash('error', 'wrong password');
+	    return res.redirect('/login');
+	}
+	req.session.user = user;
+	req.flash('success', 'login success');
+	res.redirect('/');
     });
 };
