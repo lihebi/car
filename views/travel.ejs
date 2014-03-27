@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<%- include header %>
+<div class='col-md-8' id='test'>
+<div class='carousel slide' id='mainslide' data-ride='carousel'>
+    <ol class='carousel-indicators'>
+	<li data-target='#mainslide' data-slide-to='0' class='active'>
+	<li data-target='#mainslide' data-slide-to='1' class='active'>
+	<li data-target='#mainslide' data-slide-to='2' class='active'>
+    </ol>
+    <div class='carousel-inner'>
+	<div class='item active'>
+	    <img alt='' src='images/sanhe.jpg'/>
+	    <div class='carousel-caption'>
+		三河古镇
+	    </div>
+	</div>
+	<div class='item'>
+	    <img alt='' src='images/wanfohu.jpg'/>
+	</div>
+	<div class='item'>
+	    <img alt='' src='images/zipengshan.jpg'/>
+	</div>
+    </div>
+    <a class='left carousel-control' href='#mainslide' data-slide='prev'><span class='glyphicon glyphicon-chevron-left'></span></a>
+    <a class='right carousel-control' href='#mainslide' data-slide='next'><span class='glyphicon glyphicon-chevron-right'></span></a>
+</div>
+</div>
+
+<div class='col-md-3 col-md-offset-1'>
+    <h3>本周热门帖子排行</h3>
+    <ol>
+	<li><a href='#'>三河古镇</a></li>
+	<li><a href='#'>万佛湖</a></li>
+	<li><a href='#'>紫蓬山</a></li>
+    </ol>
+</div>
+
+
+<div class='row' id='limits'>
+    <div class='col-md-12'>
+	<div class='row'>
+	    <div class='col-md-1 col-md-offset-2'>
+		<span class='btn disabled'>车型</span>
+	    </div>
+	    <div class='col-md-7'>
+		<div class='btn-group'>
+		    <a type='button' data-toggle='buttons' class='btn'>大</a>
+		    <a type='button' data-toggle='buttons' class='btn'>中</a>
+		    <a type='button' data-toggle='buttons' class='btn'>小</a>
+		</div>
+	    </div>
+	</div>
+	<div class='row'>
+	    <div class='col-md-1 col-md-offset-2'>
+		<span class='btn disabled'>品牌</span>
+	    </div>
+	    <div class='col-md-7'>
+		<div class='btn-group'>
+		    <a type='button' data-toggle='buttons' class='btn'>宝马</a>
+		    <a type='button' data-toggle='buttons' class='btn'>奔驰</a>
+		    <a type='button' data-toggle='buttons' class='btn'>奥迪</a>
+		    <a type='button' data-toggle='buttons' class='btn'>大众</a>
+		    <a type='button' data-toggle='buttons' class='btn'>丰田</a>
+		    <a type='button' data-toggle='buttons' class='btn'>本田</a>
+		    <a type='button' data-toggle='buttons' class='btn'>现代</a>
+		    <a type='button' data-toggle='buttons' class='btn'>比亚迪</a>
+		</div>
+	    </div>
+	</div>
+    </div>
+</div> <!-- limit -->
+<div class='row' id='control'>
+    <div class='col-md-12'>
+	<ul class='nav nav-pills'>
+	    <li class='active'> <a href='#'>综合</a> </li>
+	    <li> <a href='#'>按价格升序</a> </li>
+	    <li> <a href='#'>按销量</a> </li>
+	    <li> <a href='#'>按评价</a> </li>
+	</ul>
+    </div>
+</div> <!-- control -->
+<div class='container' id='items'>
+    <div class='row'>
+	<div class='col-md-3'>
+	    <a href='#'>
+	    <img src='images/benchi.jpg'/>
+	    <span>奔驰</span>
+	    </a>
+	</div>
+	<div class='col-md-3'>
+	    <p><strong>￥119</strong></p>
+	    <p>安徽合肥 蜀山区</p>
+	</div>
+	<div class='col-md-3'>
+	    <p>30天内<strong>18</strong>人使用</p>
+	    <p><a href='#'>62条评论</a></p>
+	</div>
+	<div class='col-md-3'>
+	    <p>租车公司：合肥天运租车</p>
+	</div>
+    </div> <!-- items -->
+    <div class='row'>
+	<div class='col-md-3'>
+	    <a href='#'>
+	    <img src='images/baoma.jpg'/>
+	    <span>宝马</span>
+	    </a>
+	</div>
+	<div class='col-md-3'>
+	    <p><strong>￥119</strong></p>
+	    <p>安徽合肥 蜀山区</p>
+	</div>
+	<div class='col-md-3'>
+	    <p>30天内<strong>18</strong>人使用</p>
+	    <p><a href='#'>62条评论</a></p>
+	</div>
+	<div class='col-md-3'>
+	    <p>租车公司：合肥天运租车</p>
+	</div>
+    </div> <!-- items -->
+    <div class='row'>
+	<div class='col-md-3'>
+	    <a href='#'>
+	    <img src='images/aodi.jpg'/>
+	    <span>奥迪</span>
+	    </a>
+	</div>
+	<div class='col-md-3'>
+	    <p><strong>￥119</strong></p>
+	    <p>安徽合肥 蜀山区</p>
+	</div>
+	<div class='col-md-3'>
+	    <p>30天内<strong>18</strong>人使用</p>
+	    <p><a href='#'>62条评论</a></p>
+	</div>
+	<div class='col-md-3'>
+	    <p>租车公司：合肥天运租车</p>
+	</div>
+    </div>
+</div> <!-- items -->
+
+<%- include footer %>
