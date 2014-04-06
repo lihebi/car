@@ -1,5 +1,6 @@
 var crypto = require('crypto');
-var User = require('../models/user.js');
+//var User = require('../models/user.js');
+var User = rquire('../models/user2.js');
 exports.login = login;
 exports.reg = reg;
 function reg(req, res) {
@@ -16,6 +17,10 @@ function reg(req, res) {
 	email: email,
 	password: password_md5
     });
+    newUser.save(function(err){
+        if (err) return console.error(err);
+    });
+    /*
     User.get(newUser.email, function(err, user) {
 	if (user) {
 	    req.flash('error', 'user already exists');
@@ -31,10 +36,12 @@ function reg(req, res) {
 	    res.redirect('/');
 	});
     });
+    */
 };
 function login (req, res) {
     var md5 = crypto.createHash('md5');
     var password = md5.update(req.body.password).digest('hex');
+    /*
     User.get(req.body.email, function(err, user) {
 	if (!user) {
 	    req.flash('error', 'user not exists');
@@ -48,4 +55,5 @@ function login (req, res) {
 	req.flash('success', 'login success');
 	res.redirect('/');
     });
+    */
 };
